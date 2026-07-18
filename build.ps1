@@ -56,9 +56,10 @@ foreach ($f in @($elrs, $bin)) {
     }
 }
 Write-Host ""
-Write-Host "To flash $Target via Flysky bootloader:" -ForegroundColor Yellow
-Write-Host "  1. Copy firmware.elrs to SD card root (rename if your device expects ELRS.bin)"
-Write-Host "  2. On the radio: SD Card menu -> flash ext. ELRS"
+Write-Host "To flash $Target via Flysky bootloader (NOT the EdgeTX 'flash ext. ELRS' menu):" -ForegroundColor Yellow
+Write-Host "  1. Copy firmware.bin to flasher\$Target\ELRS.bin (Flysky updater tool folder)"
+Write-Host "  2. Power radio on in bootloader mode, enable 'RF USB Access', connect USB"
+Write-Host "  3. Run 'Update firmware $Target.exe' and click Update"
 Write-Host "  See docs at https://github.com/richardclli/Flysky-ELRS/blob/main/docs/${Target}-flash.md"
 
 if ($Open) {
